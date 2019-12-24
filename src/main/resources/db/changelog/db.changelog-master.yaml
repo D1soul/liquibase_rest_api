@@ -1,0 +1,95 @@
+databaseChangeLog:
+  - logicalFilePath: db/changelog/db.changelog-master.yaml
+  - changeSet:
+      id: 1
+      author: root
+      changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: ID
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: FIRST_NAME
+                  type: varchar(50)
+              - column:
+                  name: LAST_NAME
+                  type: varchar(50)
+              - column:
+                  name: BIRTH_DATE
+                  type: date
+              - column:
+                  name: EMAIL
+                  type: varchar(50)
+              - column:
+                  name: PASSWORD
+                  type: varchar(50)
+  - changeSet:
+      id: 2
+      author: root
+      changes:
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: FIRST_NAME
+                  value: "Pavel"
+              - column:
+                  name: LAST_NAME
+                  value: "Durov"
+              - column:
+                  name: BIRTH_DATE
+                  value: "1984-10-10"
+              - column:
+                  name: EMAIL
+                  value: "vk@mail.com"
+              - column:
+                  name: PASSWORD
+                  value: "PavelDurov"
+
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: FIRST_NAME
+                  value: "Mark"
+              - column:
+                  name: LAST_NAME
+                  value: "Zuckerberg"
+              - column:
+                  name: BIRTH_DATE
+                  value: "1984-05-14"
+              - column:
+                  name: EMAIL
+                  value: "facebook@mail.com"
+              - column:
+                  name: PASSWORD
+                  value: "MarkZuckerberg"
+
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: FIRST_NAME
+                  value: "Jack"
+              - column:
+                  name: LAST_NAME
+                  value: "Dorsey"
+              - column:
+                  name: BIRTH_DATE
+                  value: '1975-11-19'
+              - column:
+                  name: EMAIL
+                  value: "twitter@mail.com"
+              - column:
+                  name: PASSWORD
+                  value: "JackDorsey"
+
+      rollback:
+        - dropTable:
+           tableName: users
