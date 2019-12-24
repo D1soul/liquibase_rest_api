@@ -82,7 +82,7 @@ databaseChangeLog:
                   value: "Dorsey"
               - column:
                   name: BIRTH_DATE
-                  value: '1975-11-19'
+                  value: "1975-11-19"
               - column:
                   name: EMAIL
                   value: "twitter@mail.com"
