@@ -9,8 +9,6 @@ import java.util.Date;
 import static javax.persistence.GenerationType.IDENTITY;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity
 @Table(name = "users")
 public class User implements Serializable {
