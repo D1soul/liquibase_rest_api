@@ -39,6 +39,4 @@ public class User implements Serializable {
              + "Last Name: " + lastName + "\n" + "Birth Date: " + birthDate + "\n"
              + "Email: " + email + "\n" + "Password: " + password + "\n";
     }
-
-
 }
